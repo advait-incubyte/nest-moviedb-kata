@@ -2,7 +2,7 @@ import { beforeAll, describe } from 'vitest';
 import { Test } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import { MovieModule } from '../src/movie/movie.module';
-import * as request from 'supertest';
+import request from 'supertest';
 
 describe('Movie E2E Suite:', () => {
   let app: INestApplication;
