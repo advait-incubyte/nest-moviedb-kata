@@ -3,6 +3,7 @@ import { MovieService } from './movie.service';
 
 describe('MovieService Unit Test Suite', () => {
   let service: MovieService;
+  let gateway;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -19,6 +20,6 @@ describe('MovieService Unit Test Suite', () => {
   it('should return oldness, given a movie name', () => {
     const movieName = 'Harry Potter and the Prisoner of Azkaban';
     service.getOldness(movieName);
-    expect(service.getOldness).toHaveBeenCalledWith(movieName);
+    expect(gateway.getMovie).toHaveBeenCalledWith(movieName);
   });
 });
