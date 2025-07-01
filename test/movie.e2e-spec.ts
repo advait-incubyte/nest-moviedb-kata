@@ -18,11 +18,10 @@ describe('Movie E2E Suite:', () => {
 
   it('should give the oldness of a movie, given the name:', async () => {
     const movieName = 'Harry Potter and the Prisoner of Azkaban';
-    const response = await request(app.getHttpServer()).get(
-      `/movies/${movieName}/oldness`,
-    );
+    const response = await request(app.getHttpServer())
+      .get(`/movies/${movieName}/oldness`)
+      .expect(200);
 
-    expect(response.status).toBe(200);
     expect(response.body).toBeDefined();
   });
 
